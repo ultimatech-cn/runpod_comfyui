@@ -1,0 +1,17 @@
+{
+  "delayTime": 105,
+  "executionTime": 134835,
+  "id": "7acef4d3-a950-413a-abdb-243a967958b0-e1",
+  "output": {
+    "images": [
+      {
+        "data": "file base64",
+        "filename": "Usamericashop_00004_.jpg",
+        "type": "base64"
+      }
+    ],
+    "status": "success"
+  },
+  "status": "COMPLETED",
+  "workerId": "4nq7jpve9f5rvr"
+}
