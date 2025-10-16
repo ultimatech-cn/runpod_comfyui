@@ -13,7 +13,7 @@
       "105": { "inputs": { "model_name": "4x_NMKD-Siax_200k.pth" }, "class_type": "UpscaleModelLoader" },
       "106": { "inputs": { "upscale_method": "lanczos", "scale_by": 1.0, "image": [ "104", 0 ] }, "class_type": "ImageScaleBy" },
       "107": { "inputs": { "tile_size": 1024, "overlap": 64, "temporal_size": 64, "temporal_overlap": 8, "pixels": [ "106", 0 ], "vae": [ "94", 2 ] }, "class_type": "VAEEncodeTiled" },
-      "111": { "inputs": { "tile_size": 1024, "overlap": 64, "temporal_size": 64, "temporal_overlap": 4, "samples": [ "153", 0 ], "vae": [ "94", 2 ] }, "class_type": "VAEDecodeTiled" },
+      "111": { "inputs": { "tile_size": 1024, "overlap": 64, "temporal_size": 64, "temporal_overlap": 8, "samples": [ "153", 0 ], "vae": [ "94", 2 ] }, "class_type": "VAEDecodeTiled" },
       "114": { "inputs": { "b1": 1.05, "b2": 1.08, "s1": 0.95, "s2": 0.8, "model": [ "118", 0 ] }, "class_type": "FreeU_V2" },
       "116": { "inputs": { "scale": 1, "adaptive_scale": 0.1, "unet_block": "middle", "unet_block_id": 0, "sigma_start": -1, "sigma_end": -1, "rescale": 0, "rescale_mode": "full", "unet_block_list": "", "model": [ "114", 0 ] }, "class_type": "PerturbedAttention" },
       "117": { "inputs": { "lora_name": "more_details.safetensors", "strength_model": 0.25, "strength_clip": 0.25, "model": [ "94", 0 ], "clip": [ "94", 1 ] }, "class_type": "LoraLoader" },
