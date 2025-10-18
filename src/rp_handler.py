@@ -159,7 +159,7 @@ def handler(job):
                     local_file_path, 
                     s3_bucket, 
                     s3_key,
-                    ExtraArgs={'ACL': 'public-read', 'ContentType': content_type}
+                    ExtraArgs={'ContentType': content_type} # <-- 关键修改：移除了 'ACL': 'public-read'
                 )
                 
                 endpoint_host = s3_endpoint_url.replace('https://', '')
