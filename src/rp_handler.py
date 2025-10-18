@@ -24,11 +24,23 @@ s3_endpoint_url = os.environ.get('S3_ENDPOINT_URL')
 
 s3_client = None
 if all([s3_bucket, s3_access_key_id, s3_secret_access_key, s3_endpoint_url]):
+    # --- 新增：从 Endpoint URL 动态提取区域 ---
+    endpoint_host = s3_endpoint_url.replace('https://', '')
+    # 格式通常是 s3.<region>.runpod.cloud，所以我们取第二部分
+    try:
+        region_name = endpoint_host.split('.')[1]
+        print(f"S3 region detected: {region_name}")
+    except IndexError:
+        region_name = None # 如果格式不符，则不指定区域
+        print("Warning: Could not automatically detect S3 region from endpoint URL.")
+    # --- 修改结束 ---
+
     s3_client = boto3.client(
         's3',
         aws_access_key_id=s3_access_key_id,
         aws_secret_access_key=s3_secret_access_key,
-        endpoint_url=s3_endpoint_url
+        endpoint_url=s3_endpoint_url,
+        region_name=region_name  # <-- 关键新增行
     )
 
 # ComfyUI API 客户端初始化
